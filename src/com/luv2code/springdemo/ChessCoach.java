@@ -10,4 +10,10 @@ public class ChessCoach implements Coach {
 		return "Play 2 games with computer";
 	}
 
+	@Override
+	public String getDailyFortune() {
+		
+		return null;
+	}
+
 }
