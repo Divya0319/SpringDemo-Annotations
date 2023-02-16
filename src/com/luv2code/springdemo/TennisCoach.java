@@ -8,8 +8,6 @@ import org.springframework.stereotype.Component;
 public class TennisCoach implements Coach {
 	
 	
-	@Autowired
-	@Qualifier("happyFortuneService")
 	private FortuneService fortuneService;
 	
 	// define a default constructor
@@ -26,12 +24,12 @@ public class TennisCoach implements Coach {
 	}
 	*/
 	
-	/*
+	
 	@Autowired
-	public TennisCoach(FortuneService theFortuneService) {
+	public TennisCoach(@Qualifier("randomFortuneService")FortuneService theFortuneService) {
 		fortuneService = theFortuneService;
 	}
-	*/
+	
 	
 	@Override
 	public String getDailyWorkout() {
