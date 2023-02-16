@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 @Configuration
-@ComponentScan("com.luv2code.springdemo")
+//  @ComponentScan("com.luv2code.springdemo")
 @PropertySource("classpath:logger.properties")
 public class SportConfig {
 	
@@ -19,6 +19,18 @@ public class SportConfig {
 		
 		return myloggerConfig;
 		
+	}
+	
+	// define bean for sad fortune service
+	@Bean
+	public SadFortuneService sadFortuneService() {
+		return new SadFortuneService();
+	}
+	
+	// define bean for our swim coach AND inject dependency
+	@Bean
+	public Coach swimCoach() {
+		return new SwimCoach(sadFortuneService());
 	}
 
 }
