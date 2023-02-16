@@ -1,8 +1,16 @@
 package com.luv2code.springdemo;
 
+import org.springframework.beans.factory.annotation.Value;
+
 public class SwimCoach implements Coach {
 	
 	private FortuneService fortuneService;
+	
+	@Value("${email}")
+	private String email;
+	
+	@Value("${team}")
+	private String team;
 	
 	public SwimCoach(FortuneService theFortuneService) {
 		fortuneService = theFortuneService;
@@ -19,5 +27,16 @@ public class SwimCoach implements Coach {
 		
 		return fortuneService.getFortune();
 	}
+
+
+	public String getEmail() {
+		return email;
+	}
+
+	public String getTeam() {
+		return team;
+	}
+	
+	
 
 }
