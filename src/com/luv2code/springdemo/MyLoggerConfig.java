@@ -5,29 +5,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
-import javax.annotation.PostConstruct;
-
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.stereotype.Component;
 
-@Component
 public class MyLoggerConfig {
 
-	private String rootLoggerLevel = "FINE";
-	private String printedLoggerLevel = "FINE";
-
-	public void setRootLoggerLevel(String rootLoggerLevel) {
-		this.rootLoggerLevel = rootLoggerLevel;
-	}
-
-	public void setPrintedLoggerLevel(String printedLoggerLevel) {
-		this.printedLoggerLevel = printedLoggerLevel;
-	}
-	
-	
-	@PostConstruct
-	public void initLogger() {
-		// parse levels
+	public MyLoggerConfig(String rootLoggerLevel, String printedLoggerLevel) {
 		Level rootLevel = Level.parse(rootLoggerLevel);
 		Level printedLevel = Level.parse(printedLoggerLevel);
 		
@@ -48,6 +30,5 @@ public class MyLoggerConfig {
 		// add handler to the logger
 		loggerParent.addHandler(consoleHandler);
 	}
-	
 	
 }
