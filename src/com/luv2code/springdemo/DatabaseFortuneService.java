@@ -10,5 +10,4 @@ public class DatabaseFortuneService implements FortuneService {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
 }
