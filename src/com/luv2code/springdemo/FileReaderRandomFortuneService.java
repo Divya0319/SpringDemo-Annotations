@@ -12,7 +12,7 @@ import javax.annotation.PostConstruct;
 
 import org.springframework.stereotype.Component;
 
-@Component
+
 public class FileReaderRandomFortuneService implements FortuneService {
 
 	String fileName = "I:\\eclipse-oxygen-workspace\\spring-demo-annotations\\src\\fortunes.txt";
